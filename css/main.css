@@ -16,7 +16,7 @@ footer {
 nav  {
     margin: 1.25rem auto; 
     max-width: 760px; 
-    text-align: center; 
+    text-align: left; 
 }
 
 
@@ -34,7 +34,7 @@ h1 img {
   }
 
 h2 { 
-    text-align: center;
+    text-align: left;
 }
 
 body {
@@ -43,9 +43,9 @@ body {
   }
   
   ul {
-      text-align: center;
+      text-align: left;
   }
 
   li {
-      text-align: center;
+      text-align: left;
   }
