@@ -1,0 +1,51 @@
+body { 
+    font-size: 20px; 
+    line-height: 1.8; 
+}
+
+header, 
+main, 
+footer { 
+    margin: 1.25rem auto; 
+    max-width: 760px; 
+    background-color: green; 
+    color: #fff; 
+    text-align: center; 
+}
+
+nav  {
+    margin: 1.25rem auto; 
+    max-width: 760px; 
+    text-align: center; 
+}
+
+
+header { 
+    padding: 1.5rem; 
+}
+
+h1 img { 
+    float: right; 
+    margin: 3px; 
+    border: 1px solid #000; 
+    background-color: green; 
+    width: 10%;
+    height: auto;
+  }
+
+h2 { 
+    text-align: center;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Helvetica, sans-serif;
+  }
+  
+  ul {
+      text-align: center;
+  }
+
+  li {
+      text-align: center;
+  }
