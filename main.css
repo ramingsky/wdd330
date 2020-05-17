@@ -1,0 +1,511 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										FONTS 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										GENERAL 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+body{
+	margin: 0;
+	line-height: 1.5em;
+	background-image: url("bgcode.png");
+	height: 100vh;
+	background-position: center;
+	background-repeat: repeat;
+	background-size: cover;
+}
+
+body, select, input, textarea{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+	font-family: 'Zilla Slab', serif;
+	margin: .25em;
+}
+
+#brand{
+	font-weight: 300;
+	color: #d56a6a;
+}
+
+main, mainsection{
+	padding: 1em;
+}
+
+
+
+h1{
+	font-size: 2em;
+	font-weight: 700;
+}
+
+h2{
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+h3{
+	font-size: 1.25em;
+}
+
+h4{
+	font-size: 1em;
+}
+
+h5{
+	font-size: .75em;
+}
+
+h6{
+	font-size: .5em;
+}
+
+table, th, td {
+	border: solid 2px #dddcdc;
+	text-align: center;
+	vertical-align: center;
+	
+	border-collapse: collapse;
+	padding: .35em;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										LINKS 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+a{
+	color: #7c9f35;
+	font-weight: 600;
+	text-decoration: none;
+	transition-duration: .3s;
+	display: inline-block;
+}
+
+a:visited{
+	color: #557412;
+}
+
+a:hover{
+	
+	color: #a6c663;
+}
+.mobile-menu a:hover{
+	transform: translate(-.5em, 0);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										HEADER 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+header{
+	padding: 1em;
+	background-color: #4e4e4e;
+	color: #dddcdc;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										NAVIGATION 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#menu-check, #menu{
+	/*opacity: 0;*/
+	
+	background-color: #4e4e4e;
+	color: #e5f5c4;
+	font-weight: 600;
+	text-align: center;
+	border-radius: 5px;
+	transition: opacity 0.5s;
+}
+
+#menu-check{
+	width: 7em;
+	height: 2.5em;
+	opacity: 0;
+}
+
+#menu{
+	width: 5em;
+	height: 1.65em;
+	padding: .25em;
+}
+
+
+@media only screen and (max-width: 599px) {
+  
+	#menu-check, #menu{
+	/*opacity: 0;*/
+		position: fixed;
+		bottom: 1.5em;
+		right: 1.5em;
+	}
+	#menu-check ~ ul{
+		transform: scale(0, 0);
+		position: fixed;
+		bottom: 4em;
+		right: 1.5em;
+		transition: .3s;
+	}
+	
+	#menu-check:checked ~ ul{
+		transform: scale(1, 1);
+	}
+	.mobile-menu > *{
+		background-color: #4e4e4e;
+		border: 1px solid #dddcdc;
+		padding: .75em;
+	}
+	
+	.topnav{
+		border-radius: 5px;
+		color: #dddcdc;
+	}
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										INTERACTIVE PIECES 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+button{
+	border-radius: 5px;
+	padding: .5em;
+	font-size: 1.1em;
+	margin: 1em;
+	display: block;
+}
+
+input{
+	width: 100%;
+	border-radius: 5px;
+	padding: .5em;
+}
+
+input:focus{
+	background-color: #e5f5c4;
+}
+
+textarea{
+	width: 98%;
+	height: 5em;
+	border-radius: 5px;
+	padding: .5em;
+}
+
+textarea:focus{
+	background-color: #e5f5c4;
+}
+
+select{
+	border-radius: 5px;
+	width: 100%;
+	padding: .5em;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										LISTS 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+li{
+	list-style: none;
+	padding-left: .75em;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										MISC 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.keyword{
+	color: #aa3939;
+	font-weight: 600;
+}
+
+#madlibs-display {
+	display: none;
+}
+
+blockquote{
+	font-family: 'Zilla Slab', serif;
+	font-weight: 400;
+	font-size: 1.25em;
+}
+
+blockquote li{
+	list-style: circle;
+	margin-left: 2em;
+}
+
+blockquote ul{
+	margin: 1em;
+}
+
+#first-num, #second-num{
+	width: 2.5em;
+	padding: .5em;
+}
+
+#cat-exercise{
+	position: relative;
+}
+
+#hat-exercise{
+	position: relative;
+	bottom: 4em;
+	right: 3.2em;
+}
+
+#catagraph{
+	text-align: center;
+}
+
+#balloon{
+	margin: 0;
+	text-align: center;
+	height: 50px;
+}
+#mouse-trail{
+	height: 300px;
+	background-color: #4e4e4e;
+}
+
+.trail {
+	position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: #a6c663;
+	display: absolute;
+}
+
+.tab-panel {
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	grid-template-areas: "button1 button2 button3 button4"
+						 "content content content content";
+}
+.tab-buttons{
+	margin: 0;
+	border-radius: 5px 5px 0 0;
+	padding: 5px 0;
+}
+
+.tab-panel div{
+	width: 100%;
+	height: 300px;
+	background-color: #dddcdc;
+	grid-area: content;
+}
+
+#tab1{
+	grid-area: button4;
+}
+#tab2{
+	grid-area: button3;
+}
+#tab3{
+	grid-area: button2;
+}
+#tab4{
+	grid-area: button1;
+}
+
+button.active{
+	background-color: #4e4e4e;
+	color: #d56a6a;
+	font-weight: 700;
+}
+
+#search>button{
+	display: inline;
+}
+
+.hero-class{
+	width: 2em;
+	padding: 1em;
+
+}
+
+
+#powers input, #char-type input{
+	display: inline;
+	margin-right: 30%;
+	float: right;
+}
+
+input#age {
+	max-width: 2em;
+	display: inline;
+	margin-right: 30%;
+	float: right;
+	height: .75em;
+}
+
+.error{
+	background: #f99;
+	border: #900 1px solid;
+	display: none;
+	border-radius: 5px;
+	padding: 1em;
+    }
+
+#story-dice img {
+	padding: 1em;
+}
+
+#dino-display{
+	position: relative;
+	height: 20em;
+}
+
+.dino-img{
+	width: 20em;
+	position: absolute;
+}
+
+#lleg{
+	animation-name: walking;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate ;
+}
+
+#rleg{
+	animation-name: walking;
+	animation-duration: 1s;
+	animation-direction: alternate-reverse;
+	animation-iteration-count: infinite;
+}
+#dbody{
+	animation-name: walking-body;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate ;
+}
+#adventurer-img {
+	display: none;
+}
+
+#tic-tac-toe{
+	border-collapse: collapse;
+	border: solid 2px black;
+	font-size: 4em;
+	font-weight: 700;
+	position: absolute;
+	top: 5em;
+}
+
+#tic-tac-toe tr:hover {
+	background-color: transparent;
+}
+
+#tic-tac-toe .ttt-cell{
+	height: 2em;
+	width: 2em;
+	text-align: center;
+	padding: 0;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										ANIMATION
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@keyframes walking{
+	0% {transform: rotate(7deg);}
+	
+	100% {transform: rotate(-7deg);}
+}
+
+@keyframes walking-body{
+	0% {transform: rotate(3deg);}
+	
+	100% {transform: rotate(-3deg);}
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+										Quiz Ninja 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.mainsection-ninja{
+	background: #5F1C1C;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+.dojo{
+	background:  url(https://cdn.rawgit.com/alexmwalker/6acbe9040d9fe6e5e9fd758a25e1b2a5/raw/9c8131eb2ccc1e3839a5a5114cb16b5dc74daf04/dojo.svg) no-repeat;
+    width: 100%;
+    height: 800px;
+    background-size: 100% auto;
+    padding-top: 1em;
+}
+
+.quiz-body{
+    background: #4e4e4e;
+    margin: 3em;
+    padding: 1em;
+    -webkit-box-shadow: 4px 4px 11px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 4px 4px 11px 3px rgba(0,0,0,0.3);
+    box-shadow: 4px 4px 11px 3px rgba(0,0,0,0.3);
+	color: #dddcdc;
+}
+
+.quiz-body div{
+	padding: 1em;
+}
+
+.quiz-body form button, .quiz-body form input{
+	margin-top: 1em;
+}
+.mainsection-ninja h1{
+	line-height: 1.25em;
+    text-align: center;
+    margin: 0;
+}
+.mainsection-ninja button {
+    color: #ffffff;
+    background-color: #113939;
+    border-color: #072727;
+    border-radius: 5px;
+    margin: 0.2em 0;
+    display: block;
+    width: 100%;
+    font-size: 24px;
+}
+#question {
+    font-size: 24px;
+}
+#result{
+    color: #fff;
+    margin: auto;
+    width: 75%;
+    text-align: center;
+	border-radius: 5px;
+}
+.correct {
+    background-color: #44591b;
+	font-family: 'Zilla Slab', serif;
+	font-size: 1.5em;
+	line-height: 1.25em;
+}
+.wrong {
+    background-color: #5f1d1d;
+	font-family: 'Zilla Slab', serif;
+	font-size: 1.5em;
+	line-height: 1.25em;
+}
+#info{
+	text-align: center;
+	font-size: 2em;
+}

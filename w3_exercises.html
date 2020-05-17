@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WDD330 ramil capangpangan</title>
+	<link rel="stylesheet" media="screen" href="main.css">
+	<link rel="stylesheet" media="screen" href="large.css">
+	
+	<script>
+		const MOUNTAINS = [
+			{name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+			{name: "Everest", height: 8848, place: "Nepal"},
+			{name: "Mount Fuji", height: 3776, place: "Japan"},
+			{name: "Vaalserberg", height: 323, place: "Netherlands"},
+			{name: "Denali", height: 6168, place: "United States"},
+			{name: "Popocatepetl", height: 5465, place: "Mexico"},
+			{name: "Mont Blanc", height: 4808, place: "Italy/France"}
+		];
+		
+		function generateTable(){
+			
+			//function to create elements
+			function createElement(tag, text, id){
+				const genElement = document.createElement(tag);
+				genElement.textContent = text;
+				genElement.setAttribute("id", id);
+				return genElement;
+			}
+			
+			
+			//create table
+			document.getElementById("mountains").appendChild(createElement("table","", "mountain-table"));
+			
+			
+			//create header
+			document.getElementById("mountain-table").appendChild(createElement("tr", "", "table-header"))
+			
+			
+			//put data in header
+			let keyNames = Object.keys(MOUNTAINS[0])
+				
+			for (let i=0; i<keyNames.length;i++ ){
+				document.getElementById("table-header").appendChild(createElement("th", keyNames[i].toUpperCase()));
+			}
+			
+			//create table data
+			let rowQty = MOUNTAINS.length;
+			
+			for (i2=0; i2<rowQty; i2++){
+				let mtIndex = Object.values(MOUNTAINS[i2]);
+				document.getElementById("mountain-table").appendChild(createElement("tr", "", "row"+i2))
+				
+				for (i=0; i<keyNames.length;i++ ){
+				document.getElementById("row"+i2).appendChild(createElement("td", mtIndex[i]));
+				}
+			}
+			
+			//right-align number value cells by setting style.textAlign property to "right"
+			
+			let td = document.getElementsByTagName("td");
+			
+			for (i=0; i<td.length; i++){
+				if (td[i].textContent>=0){
+					td[i].style.textAlign = "right";
+				}
+			}
+			document.getElementById("mt-button").style.display = "none";
+		}
+	
+
+		
+		function catimate(){
+			
+			let cat = document.querySelectorAll("img");
+			let angle = Math.PI / 2;
+			function animate(time, lastTime) {
+				if (lastTime != null) {
+				angle += (time - lastTime) * 0.001;
+			}
+			cat[0].style.top = (Math.sin(angle) * 2) + "em";
+			cat[0].style.left = (Math.cos(angle) * 20) + "em";
+			cat[1].style.top = (Math.sin(angle) * -2) + "em";
+			cat[1].style.left = (Math.cos(angle) * -20) + "em";
+			requestAnimationFrame(newTime => animate(newTime, time));
+			}
+			requestAnimationFrame(animate);
+		}
+		
+		
+			
+		function arrowHandler(event) {
+			//Get the balloon and it's size
+			let balloon = document.getElementById("balloon");
+			let style = window.getComputedStyle(balloon, null).getPropertyValue('font-size');
+			let originalFontSize = parseFloat(style);
+			let newFontSize;
+
+			//inflate by 10%, deflate by 10%... unless it gets too big, then pop it.
+			if (originalFontSize < 45){
+				if (event.key == "ArrowUp"){
+					newFontSize = originalFontSize * 1.1;
+					balloon.style.fontSize = newFontSize + "px";
+					event.preventDefault();
+
+				} else if (event.key == "ArrowDown"){
+					newFontSize = originalFontSize - (originalFontSize * 0.1);
+					balloon.style.fontSize = newFontSize + "px";
+					event.preventDefault();
+
+				}
+			} else {
+				balloon.innerHTML="&#128165;";
+				document.body.removeEventListener("keydown", arrowHandler);
+			}
+		}
+				
+		
+		
+		var mouseCounter = 0;
+		
+		function mousyTrail(){
+			let mouseHouse = document.getElementById("mouse-trail");
+			var breadCrumbs = document.querySelectorAll(".trail");
+			mouseCounter++;
+			breadCrumbs[mouseCounter % breadCrumbs.length].style.left = (event.pageX - 5 )+ "px";
+			breadCrumbs[mouseCounter % breadCrumbs.length].style.top = (event.pageY - 5 ) + "px";
+		}
+			
+		/*Tabbed panels are widely used in user interfaces. They allow you to select an interface panel by choosing from a number of tabs “sticking out” above an element.
+
+		In this exercise you must implement a simple tabbed interface. 
+		
+		Write a function, asTabs, that takes a DOM node and creates a tabbed interface showing the child elements of that node. 
+		
+		X 	It should insert a list of <button> elements at the top of the node, one for each child 	element, containing text retrieved from the data-tabname attribute of the child. 
+		
+		X	All but one of the original children should be hidden (given a display style of none). X	The currently visible node can be selected by clicking the buttons.
+
+		X	When that works, extend it to style the button for the currently selected tab 	
+			differently so that it is obvious which tab is selected.*/
+		function myTabs(node){
+			let tabs = node.children;
+			
+			function createElement(tag, text, className, id){
+				const genElement = document.createElement(tag);
+				genElement.textContent = text;
+				genElement.setAttribute("class", className);
+				genElement.setAttribute("id", id);
+				return genElement;
+			}
+			
+			for (let i = 0; i<tabs.length; i++){
+				let text = tabs[i].getAttributeNode("data-tabname").value.toUpperCase();
+				tabs[i].appendChild(createElement("BUTTON", text, "tab-buttons", "tab"+i));
+				tabs[i].style.display = "none";
+			}
+			tabs[0].style.display = "block";
+			
+			let buttons = document.querySelectorAll(".tab-buttons");
+			
+			for (i = 0; i<buttons.length; i++ ){
+				node.prepend(buttons[i]);
+			}
+		}
+			
+		function buttonClick(event){
+			const target = event.target;
+			const targetTag = target.tagName;
+			const buttons = document.querySelectorAll(".tab-buttons");
+			
+			for (let i = 0; i<buttons.length; i++ ){
+				(buttons[i].classList.remove("active"));
+			}
+			
+			if(targetTag == "BUTTON"){
+				target.classList.add("active");
+			}
+			
+			const divs = document.querySelectorAll(".tab-div");
+			
+			for(i=0; i<divs.length; i++){
+				let text = divs[i].getAttributeNode("data-tabname").value.toUpperCase();
+				let targetText = target.innerHTML;
+				if(text == targetText){
+					divs[i].style.display = "block";
+				} else {
+					divs[i].style.display = "none";
+				}
+			}
+			
+			
+		}
+		
+		function byTagName(node, tagName){
+			let byTagName = node.getElementsByTagName(tagName);
+			return byTagName;
+		}
+		
+
+		
+	</script>
+</head>
+
+<body>
+	
+	<header>
+		<h1><span id="brand">ramil</span>capangpangan</h1>
+		<h2>WDD 330 - Mobile Application Pilot</h2>
+		<h4>Spring 2020</h4>
+	</header>
+	
+	<main>
+		<nav class="mobile-menu">
+			<div id="menu">M E N U</div>
+			<input type="checkbox" id="menu-check">
+			<ul class="topnav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="quizninja.html">Project: Quiz Ninja</a></li>
+				<li>Week 3
+					<ul>
+						<li><a href="w3_team3">Team Assignment</a></li>
+						<li><a href="w3_notes.html">Notes</a></li>
+						<li><a href="w3_exercises.html">Exercises</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		
+		<section class="mainsection">
+			<h3>Eloquent JavaScript 14</h3>
+			<div>
+				<h4>Mountains</h4>
+				<div id="mountains"></div>
+				<button onclick="generateTable()" id="mt-button">Click to Generate Table</button>
+			</div>
+			
+			<div>
+				<h4>Elements by Tag Name</h4>
+				<h1>Heading with a <span>span</span> element.</h1>
+				<p>A paragraph with <span>one</span>, <span>two</span> spans.</p>
+			</div>
+			
+			<div>
+				<h4>The Cat's Hat</h4>
+				<p id="catagraph">
+					<img src="images/cat.png" id="cat-exercise">
+					<img src="images/hat.png" id="hat-exercise">
+				</p>
+				<button onclick="catimate()">Animate</button>
+			</div>
+			
+			<h3>Eloquent JavaScript 15</h3>
+			
+			<div>
+				<h3>Balloon</h3>
+				<p id="balloon">&#127880;</p>
+			</div>
+			
+			<div>
+				<h3>Mouse Trail</h3>
+				<div id="mouse-trail">
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+				<div class="trail"></div>
+			</div>
+			</div>
+			
+			<div>
+				<h3>Tabs</h3>
+				<div class="tab-panel">
+					<div class="tab-div" data-tabname="science">Science</div>
+					<div class="tab-div" data-tabname="history">History</div>
+					<div class="tab-div" data-tabname="math">Math</div>
+					<div class="tab-div" data-tabname="geography">Geography</div>
+				</div>
+			
+			</div>
+		
+		</section>
+		
+		<script>
+			document.body.addEventListener("keydown", arrowHandler);
+			document.getElementById("mouse-trail").addEventListener("mousemove", mousyTrail, true)
+			myTabs(document.querySelector(".tab-panel"));
+			document.querySelector(".tab-panel").addEventListener("click", buttonClick, true)
+			
+			console.log(byTagName(document.body, "h1").length);
+			// → 1 + 1 in the header
+			console.log(byTagName(document.body, "span").length);
+			// → 3 + 1 in the header
+			let para = document.querySelector("p");
+			console.log(byTagName(para, "span").length);
+			// → 2
+		</script>
+	</main>
+</body>
+</html>

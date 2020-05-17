@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WDD 330 Localstorage</title>
+	<link rel="stylesheet" media="screen" href="main.css">
+	<link rel="stylesheet" media="screen" href="large.css">
+	<script>
+		function loadStory(){
+			var storyName = document.getElementById("name_input").value;
+			var storyHTML = localStorage.getItem(storyName);
+			document.getElementById("story_editor").value=storyHTML;
+		}
+
+    var list = [];
+    var storyList;
+
+		function saveStory(){
+			
+			if (!list == null) {
+				list = localStorage.getItem(storyList).split(",");
+			}
+			
+			var newList = [];
+			var storyName = document.getElementById("name_input").value;
+			var storyHTML = document.getElementById("story_editor").value;
+			list.push(storyName + '<br />');
+			
+			newList = removeDuplicateUsingSet(list);
+			
+			localStorage.setItem(storyName, storyHTML);
+			localStorage.setItem(storyList, newList);
+			
+		}
+
+		function removeDuplicateUsingSet(arr){
+			let unique_array = Array.from(new Set(arr))
+			return unique_array
+		}
+		
+
+		function displayStory(){
+			var storyHTML = document.getElementById("story_editor").value;
+			document.getElementById("story_display").innerHTML=storyHTML;
+		}
+
+		function displayList(){			
+			var titles = localStorage.getItem(storyList);
+
+			if(titles != null){
+				titles = titles.split(",");
+			}
+			else {
+				titles=[];
+			}
+			var str_end = "";
+			for (var i=0; i<=titles.length - 1; i++){
+				str_end += String(titles[i]);	
+			}
+			document.getElementById("story_list").innerHTML=str_end;
+		}
+	</script>
+
+</head>
+
+<body>
+	
+	<header>
+		<h1><span id="brand">ramil</span>capangpangan</h1>
+		<h2>WDD 330 - Mobile Application Pilot</h2>
+		<h4>Spring 2020</h4>
+	</header>
+	
+	<main>
+		<nav class="mobile-menu">
+			<div id="menu">M E N U</div>
+			<input type="checkbox" id="menu-check">
+			<ul class="topnav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="quizninja.html">Project: Quiz Ninja</a></li>
+				<li>Week 1
+					<ul>
+						<li><a href="w1_story_editor.html">Story Editor</a></li>
+						<li><a href="w1_notes.html">Notes</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		
+		<section class="mainsection">
+		
+			<h3>Story Editor</h3>
+			<p>Story Name: <input id="name_input"></p>
+			<section>
+				<button onclick="loadStory()">Find and Edit It</button>
+				<button onclick="saveStory()">Save It</button>
+				<button onclick="displayStory()">Display It</button>
+				<button onclick="displayList()">List Recently Saved Titles</button> 
+			</section>
+      		<section id="story_list"></section>
+			<textarea id="story_editor" placeholder="Write a story. Make it awesome. Don't give up!"></textarea>
+
+			<section id="story_display"></section>
+		</section>
+	</main>
+	
+</body>
+</html>
