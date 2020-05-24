@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WDD330 Nanci Newell</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" media="screen" href="todo.css">
+</head>
+
+<body>
+	
+	<header>
+		<h1>Killin' It</h1>
+		<h2 id="remaining">0 To Be Killed</h2>
+	</header>
+	
+	<main>
+		<div class="lineItem">
+			<button id="add-button" onclick="createNewItem()" >+</button>
+			<input type="text" id="add-text" onfocus="this.value=''" placeholder="new thing to do" onkeypress="enterKeypress(event)">
+			<button class="delete" id="clear-input" onclick="clearInput()">&#128163;</button>
+		</div>
+		<div id="item-container">
+		<!-- INSERT ALL ITEMS HERE!-->
+		</div>
+	</main>
+	<section class="to-do-buttons">
+		<button onclick="newList.filterItems(false)">&#128128;</button>
+		<button onclick="newList.filterItems(true)">&#9760;</button>
+		<button onclick="newList.display()">&#128128; &#9760;</button>
+		<p><a href="todo-info.html" target="_blank">Click here to view the info about this project.</a></p>
+	</section>
+	
+<script type="module">
+    import { ListItem, ListItemCollection, newList, createNewItem, enterKeypress, markDone, markUndone, removeItem } from './todoV8.js';
+	//HTML expect the global window object- need to redirect it
+	window.createNewItem = createNewItem;
+    window.enterKeypress = enterKeypress;
+	window.newList = newList;
+	
+
+    //display on load
+    newList.display();
+</script>
+</body>
+</html>
