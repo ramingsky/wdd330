@@ -84,25 +84,25 @@ class ListItemCollection {
 		//retrieve the container to put the new item in.
 		let itemContainer = document.getElementById("item-container");
 		let item = this.itemList.filter(obj => obj.name == name);
-		let skull = "💀";
-		let crossBones = "☠";
+		let hDone = "⌛";
+		let checkMark = "✔️";
 		//create div to hold the pieces
 		let div = itemContainer.appendChild(createElement("div", "", "lineItem", name));
 		//append the pieces to the div
 		try {
 			//set appropriate class and content based on whether it's completed
 			if (!item[0].complete) {
-				div.appendChild(createElement("button", skull, "skull", name)).addEventListener("click", markDone);
+				div.appendChild(createElement("button", hDone, "hDone", name)).addEventListener("click", markDone);
 				div.appendChild(createElement("div", item[0].text, "items", name));
 			} else {
-				div.appendChild(createElement("button", crossBones, "bones", name)).addEventListener("click", markUndone)
+				div.appendChild(createElement("button", checkMark, "checkMark", name)).addEventListener("click", markUndone)
 				div.appendChild(createElement("div", item[0].text, "items", name)).classList.add("done");
 			}
 		} catch (error) {
 			console.log("There was no 'complete' property");
 			console.log(error.message);
 		}
-		div.appendChild(createElement("button", "💣", "delete", name)).addEventListener("click", removeItem);
+		div.appendChild(createElement("button", "❌", "delete", name)).addEventListener("click", removeItem);
 		//if incomplete, prepend div to top of the list
 		if (!item[0].complete) {
 			itemContainer.prepend(div);
@@ -130,7 +130,7 @@ class ListItemCollection {
 		let remainingItems = this.itemList.filter(item => item.complete == false).length;
 		//display remaining items
 		let display = document.getElementById("remaining");
-		display.innerHTML = `${remainingItems} thing${remainingItems==1 ? '': 's'} to knock out`;
+		display.innerHTML = `${remainingItems} Task${remainingItems==1 ? '': 's'} Left`;
 	}
 	
 }

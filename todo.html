@@ -10,24 +10,25 @@
 <body>
 	
 	<header>
-		<h1>Killin' It</h1>
-		<h2 id="remaining">0 To Be Killed</h2>
+		<h1>TO DO LIST</h1>
+		<h2 id="remaining">0 Task Left</h2>
 	</header>
 	
 	<main>
-		<div class="lineItem">
+		<div class="lineItem">		
+			<button class="delete" id="clear-input" onclick="clearInput()">&nbsp;</button>
+			<input type="text" id="add-text" onfocus="this.value=''" placeholder="new to do task" onkeypress="enterKeypress(event)">
 			<button id="add-button" onclick="createNewItem()" >+</button>
-			<input type="text" id="add-text" onfocus="this.value=''" placeholder="new thing to do" onkeypress="enterKeypress(event)">
-			<button class="delete" id="clear-input" onclick="clearInput()">&#128163;</button>
+			<!--<button class="delete" id="clear-input" onclick="clearInput()">❌</button>-->
 		</div>
 		<div id="item-container">
 		<!-- INSERT ALL ITEMS HERE!-->
 		</div>
 	</main>
 	<section class="to-do-buttons">
-		<button onclick="newList.filterItems(false)">&#128128;</button>
-		<button onclick="newList.filterItems(true)">&#9760;</button>
-		<button onclick="newList.display()">&#128128; &#9760;</button>
+		<button onclick="newList.display()" title="View All Task">⚽</button>
+		<button onclick="newList.filterItems(false)" title="View Active Task">⌛</button>
+		<button onclick="newList.filterItems(true)" title="View Completed Task">✔️</button>		
 		<p><a href="todo-info.html" target="_blank">Click here to view the info about this project.</a></p>
 	</section>
 	

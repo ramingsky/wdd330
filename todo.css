@@ -6,15 +6,16 @@
 				GENERAL
 * * * * * * * * * * * * * * * * * * * * * * * */
 body {
-	font-family: 'Roboto Slab', serif;
+	font-family: "Arial";
 	background-color: #191919;
 	height: 100vh;
 	min-width: 475px;
 }
 
 h1, h2{
-	font-family: 'Permanent Marker', cursive;
+	/*font-family: 'Permanent Marker', cursive;*/
 	/*font-family: 'Bangers', cursive;*/
+	font-family: 'Bangers', cursive;
 	color: #a6a5a5;
 	text-align: center;
 	letter-spacing: 4px;
@@ -130,7 +131,7 @@ button:hover{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 1em;
-	background-color: #191919;
+	background-color: #0e0341;
 	width: 90%;
 	padding: 1em 1em 2em;
 	min-width: 475px;
