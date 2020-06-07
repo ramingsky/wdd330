@@ -313,111 +313,23 @@
             They also provide a nicer mechanism for handling errors</p>
 
             <h3>Chapter 13</h3>
-            <h4>Retrieving Information</h4>
-            <p>Here is a working fetch request as outlined by the book. I removed the numbers piece as that site is no longer working.</p>
+            <h4>Ajax</h4>
+            <p>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloadning. 
+            This enables data to be sent and received in the background, as well as portions of  Page to be updated in response to user events, while the rest 
+            of the program continue to run.
+            </p>
+            <p>It uses revolutionaized how websites worked, and ushered in a new age of web applications. 
+                Web pages were no longer ststic, but dynamic applications.
+                </p>
+                     
+            <h4>Communicating the server with Fetch API</h4>
+            <p>Can be used instead of callbacks to deal with multiple asynchronous actions in sequence. 
+            They also provide a nicer mechanism for handling errors</p>
 
-            <button id='chuck'>Chuck Norris Fact</button>
-            <em><div id='ajax-output'></div></em>
 
-            <p>Here is a working fetch I made myself! I used the Studio Ghibli API and pulled the movie titles.</p>
-            <div id="ghibli"></div>
-            
-            <h4>Sending Information</h4>
-            <form id='ajax-todo' action='https://jsonplaceholder.typicode.com/todos' method='POST'>
-                <input type='text' name='task' placeholder='What do you need to get done?' autofocus required>
-                <button type='submit'>Add Task</button>
-            </form>
+
         </section>
     </main>
-    <script>
-        recursiveFunction(document.getElementById("main"));
-        // * * * * * * * * * * * * * API REQUEST * * * * * * * * * * * * *
-        
-        //from the book   
-        const apiButton = document.getElementById('chuck');
-        const outputDiv = document.getElementById('ajax-output');
-        const apiURL = "https://api.chucknorris.io/jokes/random";
-
-        apiButton.addEventListener('click', () => {
-            fetch(apiURL)
-                .then(response => {
-                    outputDiv.innerHTML = 'Waiting for response...';
-                    if (response.ok) {
-                        return response;
-                    }
-                    throw Error(response.statusText);
-                })
-                .then(response => response.json())
-                .then(data => outputDiv.innerText = data.value)
-                .catch(error => console.log('There was an error:', error))
-        }, false);
-        //my own API request!
-        const url = 'https://ghibliapi.herokuapp.com/films';
-        const headers = new Headers({ 'Content-Type': 'application/json', 'Accept-Charset': 'utf-8', 'Accept-Encoding': 'gzip,deflate' })
-        const request = new Request(url, {
-            headers: headers,
-            method: 'GET',
-            cache: 'no-cache',
-            redirect: 'follow'
-        })
-
-        fetch(request)
-            .then(function (response) {
-                if (response.ok) {
-                    header("Testing Fetch");
-                    console.log("The fetch seems to have worked!");
-                    return response;
-                }
-                throw Error(response.statusText);
-            })
-            .then(response => response.json())
-            .then(data => data.forEach(movie => {
-                let output = document.getElementById("ghibli");
-                output.innerHTML += (`${movie.title} <br>`)
-            })
-            )
-                
-            .catch(error => {
-                console.log(header("Testing Fetch"));
-                console.log("There was an error. The fetch request didn't work.", error);
-            })
-
-    // * * * * * * * * * * * * * * * * * * * * * SENDING INFORMATION * * * * * * * * * * * * * * * * * * * * *
-        const form = document.forms['ajax-todo'];
-        form.addEventListener('submit', addTask, false);
-
-        function addTask(event) {
-            event.preventDefault();
-            const task = new FormData(form);
-            const data = JSON.stringify(task);
-            const url = `http://echo.jsontest.com/id/1/title/${form.task.value}`;
-            const headers = new Headers({
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            });
-            const request = new Request(url,
-                {
-                    method: 'POST',
-                    header: headers,
-                    body: JSON.stringify(task),
-                    mode: 'no-cors'
-                }
-            )
-            //reset input field
-            form.task.value = "";
-
-            fetch(request)
-                .then(response => response.json())
-                .then( data => {
-                    header("Testing Sending Information");
-                    console.log(`Task saved with an id of ${data.id}`)
-                })
-                //every time I test this, it says the faux site is overloaded and service is unavailable.
-                .catch(error => {
-                    header("Testing Sending Information");
-                    console.log('There was an error:', error);
-                })
-        }
-    </script>
+    </body>
 </body>
 </html>
