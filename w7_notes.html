@@ -251,13 +251,13 @@
         <section class="mainsection">
             <h3>What I Learned This Module</h3>
             <h3>Chapter 11</h3>
-            <h4>Call/Apply methods</h4>
-            <p>See console for working examples.</p>
+            
             <p>
-                The book used the example of square.call(null, 4), but I cannot see any
-                reason to do this since you could simply write square(4). I guess simply knowing
-                that you can is important. Once again we see there are many ways of going about
-                the same objective.
+                The chapter explained the role of functions. In Javascript, functions are first-class objects, which
+                means they can be passed around in the same way as every other value. They can have their own 
+                properties and methods, as well as accepting other functions. This makes them a very felxible tool to
+                work with in savaScript, and there are a variety of techniques and patterns that can be used to make 
+                a code cleaner.
             </p>
             <p>
                 Interestingly, when you feed an array into a function as a parameter, and the
@@ -268,13 +268,13 @@
             <h4>Memoization</h4>
             <p>See console for working examples</p>
             <p>
-                Note to self- this would have been very useful in my isPrime project.
-                Go research corresponding methods in Java.
+                A useful feature of this is that it provides result caching, or memoization.
+
+                If a function takes some time to compute a return value, we can save the result om a cache property or temporary memory.
+                If the same argument is used again later, we can return the value from the cache, rather that computing the result again.
             </p>
 
-            <h4>Temporary Variables and IIFE</h4>
-            <p>Surprise! Go to the console to see working examples.</p>
-
+            
             <h4>Rewriting Functions</h4>
             <p>Click the button. Then click again to transform!</p>
             <button onclick="jekyllHyde()">Click!</button>
@@ -288,12 +288,7 @@
                     support them safely.<br /><br /><em><a href="https://www.sitepoint.com/recursion-functional-javascript/" target="_blank">Recursion in Functional JavaScript</a></em>
                 </blockquote>
             </p>
-            <p>
-                It took a bit to get my recurssive function to work. The examples all ended with returning the function, but if I return,
-                then it breaks out of the function and will only get the first children of the elements. Once I figured that out, I could have
-                the recursive function call itself for each of Main's children, and their children, etc. Logged here:
-            </p>
-            <div id="recursion-output"></div>
+           
 
             <h4>Functions Returning Functions</h4>
             <p>See console for a working example.</p>
@@ -309,17 +304,13 @@
 
             <h4>Callbacks in Asynchronous Programming</h4>
             <p>
-                I had to move Callbacks and Promises to the bottom as they were messing up the order of my
-                console.logs. It's hard to keep track of what's going on when things are working asynchronously!
+                Frequently used as part of the event loop. This means that a program can continue to run in a single 
+                thread while waiting for another task to be completed.
             </p>
-            <p>See console for a working example</p>
-            <p>
-                I had a hard time coming up with a reason to use this. My awareness of programming
-                needs is so small. I created one to show I can and I hope to find a need to use them again.
-            </p>
-
+           
             <h4>Promises</h4>
-            <p>See console for a working example</p>
+            <p>Can be used instead of callbacks to deal with multiple asynchronous actions in sequence. 
+            They also provide a nicer mechanism for handling errors</p>
 
             <h3>Chapter 13</h3>
             <h4>Retrieving Information</h4>
