@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+h1, h2, h3, h4, h5 {
+    color: yellow;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Hepta Slab', serif;
+}
+
+main {
+    width:100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+button {
+    background-color: transparent;
+    color: yellow;
+    text-transform: uppercase;
+    font-size: .9em;
+    border: 1px solid yellow;
+    border-radius: 3px;
+    font-family: 'Hepta Slab', serif;
+    cursor: pointer;
+    text-align: center;
+    padding: 1em;
+}
+
+.backbutton {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em;
+}
+.mainlist li {
+    padding: 0 .5em;
+    border-bottom: 1px solid white;
+    line-height: 2em;
+    text-align: left;
+}
+.full-detail li{
+    border:none;
+}
+.pagination {
+    text-align: center;
+    width: 100%;
+}
+.hide {
+    display: none;
+}
+.show {
+    display:block;
+}
+.active {
+    color:blue;
+}
