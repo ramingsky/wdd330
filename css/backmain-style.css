@@ -47,14 +47,6 @@ a:hover, a:active {
     line-height: 1.2em;
 }
 
-footer {
-    background-color: #88a0a8;
-    color: #313e50;
-    width: 100%;
-    margin: 2em 0 -2em -2em;
-    padding: 1em 2em;
-}
-
 textarea {
     width: 100%;
     height: 12em;
