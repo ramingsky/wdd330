@@ -94,7 +94,9 @@
                     </ul>
                     <h5>Transitions</h5>
                     <ul>
-                        <li>Animation has certainly been possible for some time with JavaScript, but native CSS transitions generally require less client-side processing, so they’ll usually appear smoother. On mobile devices with limited computing power, this can be a lifesaver.</li>
+                        <li>Animation has certainly been possible for some time with JavaScript, but native CSS
+                            transitions generally require less client-side processing, so they’ll usually appear
+                            smoother. On mobile devices with limited computing power, this can be a lifesaver.</li>
                         <li>
                             Transitions apply when a class is changed; saves JavaScript some work.
                             <ul>
@@ -133,7 +135,8 @@
 
                     <h5>Animations</h5>
                     <ul>
-                        <li>CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.</li>
+                        <li>CSS animations, unlike transitions, allow you to control each step of an animation via
+                            keyframes.</li>
                         <li>Allows you to define keyframes -- snapshots with the starting or ending point of the
                             transition</li>
                         <li>Good alternative to JavaScript animation; better to use for simple-state changes especially
@@ -149,7 +152,8 @@
                         </li>
                         <li>animation-name: myAnimation; within an element's styles declares the animation (calls the
                             keyframes function) </li>
-                        <li>animation-duration property defines the length of time (in seconds or milli-seconds) an animation takes to complete one iteration (all the way through, from 0% to 100%):</li>
+                        <li>animation-duration property defines the length of time (in seconds or milli-seconds) an
+                            animation takes to complete one iteration (all the way through, from 0% to 100%):</li>
                         <li>animation-timing-function with same parameters as transition-timing-function above.</li>
                         <li>animation-direction: usually goes from 0-100% (normal), but can be specified to go backward
                             with reverse or alternate forwards/backwards with alternate or alternate-reverse.</li>
@@ -170,28 +174,54 @@
                     </ul>
 
                     <h4>Chapter 12: Canvas, SVG, and Drag and Drop</h4>
+                    <h4>Canvas</h4>
                     <ul>
-                    </li>
-                    <li>Canvas:
-                        <ul>
-                            <li>With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. This can improve the performance of our websites by avoiding the need to download images off the network</li>
-                            <li>transform: skew(Xdeg, Ydeg);</li>
-                        </ul>
-                    </li>
-                        <li>
-                            Canvas element allows user to draw on the page. It was developed by Apple, so familiarity
-                            with Canvas helps with some iOS developer skills (Quartz 2D).
-                        </li>
-                        <li>Canvas tag -- text inside only shown if Canvas is not supported by the browser. Must specify
-                            width and height in HTML tag; CSS will not resize the Canvas coordinate system.</li>
-                        <li>(Most of this chapter had hands-on examples I used in lieu of note taking.)</li>
-                    </ul>
-                    </section>
+                        <li>Creating a canvas Element</li>
+                        <li>Drawing on the Canvas</li>
+                        <li>Getting the Context</li>
+                        <li>Filling Our Brush with Color</li>
+                        <li>Drawing a Rectangle to the Canvas</li>
+                        <li>Variations on fillStyle</li>
+                        <li>Drawing Other Shapes by Creating Paths</li>
+                        <li>Saving Canvas Drawings</li>
+                        <li>Drawing an Image to the Canvas</li>
+                        <li>Manipulating Images</li>
+                        <li>Security Errors with getImageData</li>
+                        <li>Converting an Image from Color to Black and White</li>
+                        <li>Manipulating Video with Canvas</li>
+                        <li>Displaying Text on the Canvas</li>
+                        <li>Accessibility Concerns</li>
+                        <li>Further Reading</li>
+                </li>
+            </ul>
+            <h4>SVG</h4>
+            <p>SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe vector
+                graphics using XML. A major selling point of vector graphics in general is that, unlike bitmap images
+                (such as GIF, JPEG, PNG, and TIFF), vector images preserve their quality even as you blow them up or
+                shrink them down. We can use SVG to do many of the same tasks we can do with canvas, including drawing
+                paths, shapes, text, gradients, and patterns.</p>
+            <ul>
+                <li>Drawing in SVG</li>
+                <li>SVG Filters</li>
+                <li>Using the Raphaël Library</li>
+                <li>Canvas versus SVG</li>
+            </ul>
+
+            <h4>Drag and Drop</h4>
+            <p>The Drag and Drop API. This API allows us to specify that certain elements are draggable, and then
+                specify what should happen when these draggable elements are dragged over or dropped onto other elements
+                on the page.</p>
+            <ul>
+                <li>Feeding the WAI-ARIA Cat</li>
+                <li>Making Elements Draggable</li>
+                <li>The DataTransfer Object</li>
+                <li>Accepting Dropped Elements</li>
+                <li>Further Reading</li>
+
+            </ul>
+            </section>
         </main>
 
-        <footer>
-            &copy; 2020 Ramil M. Capangpangan. WDD 330.
-        </footer>
 
         <script src="js/pagefunctions.js"></script>
         <script src="js/week8.js"></script>
