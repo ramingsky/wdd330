@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Week 9 | WDD330 | Ramil Capangpangan</title>
+            <meta name="description" content="Assignments, samples and course projects for Ramil Capangpangan, for WDD330 at BYU-Idaho.">
+            <meta name="author" content="Ramil Capangpangan">
+            <link rel="stylesheet" href="css/main-style.css">
+    </head>
+    
+    <body>
+        <div class="page_wrap">
+            <header>
+                <h1>Week 9</h1>
+                <p>Notes and questions for Week 9. <br />
+                    <a href="week9_exercises.html">Week 9 Exercises</a> | 
+                    <a href="team4_drums/index.html">Team Activity</a><br />
+                    <a href="index.html">&#60; Back to Portfolio</a></p>
+            </header>
+            <main>
+                <h2>Questions</h2>
+                <section>
+                    <ul>
+                        <li>
+                            How do you know when it's the right time to use a Worker?
+                        </li>
+                    </ul>
+                </section>
+                
+                <h2>Notes</h2>
+                <a id="hider" class="hider" onclick="showNotes()">SHOW &#62;</a>
+                <section id="notes" class="hideme">
+                    <h3>Javascript Novice to Ninja</h3>
+                    <h4>Chapter 9: The Window Object</h4>
+                    <ul>
+                        <li>BOM = Browser Object Model (only applies to browsers, not other environments)</li>
+                        <li>Global variables are created without const, let, or var. "window" is a global peroperty; all global variables in a browser are properties of "window."</li>
+                        <li>parseInt() and isNaN() are global properties of window object.</li>
+                        <li>ES6: parseInt() and isNaN() are also methods of Number object.</li>
+                        <li>Dialogs such as alert(), confirm(), and prompt() are risky; can be blocked by browsers, or can cause errors by completely halting the program pending user input.</li>
+                        <li>window.navigator.userAgent returns browser info, but can be unreliable. (deprecated)</li>
+                        <li>window.location
+                            <ul>
+                                <li>.href returns entire URL (can also be designated by assignment, causing a redirect)</li>
+                                <li>.protocol returns a string with the protocol used (http, https, pop2, ftp, etc</li>
+                                <li>.host returns the domain name and port number, ex. www.sitepoint.com:44</li>
+                                <li>.hostname returns the domain (no port number)</li>
+                                <li>.port returns the port number (empty if not explicitly stated in URL)</li>
+                                <li>.pathname returns the path AFTER the domain</li>
+                                <li>.search returns a string starting with ? and query string parameters, if any</li>
+                                <li>.hash returns a string starting with # and the fragment identifier if any.</li>
+                                <li>.origin returns a string with the protocol and domain where the current page is -- cannot be changed by assignment (unlike href)</li>
+                                <li>reload() method - forces a refresh of the page. Use reload(true) to load fresh from server (not cached)</li>
+                                <li>assign('urlstring') method - loads another resource from a URL</li>
+                                <li>replace() - similar to assign, but doesn't store current page in history (can't use Back button)</li>
+                                <li>toString() - returns a string with the whole URL</li>
+                            </ul>
+                        </li>
+                        <li>window.history accesses previously-visited page info (not to be confused with HTML5 History API)
+                            <ul>
+                                <li>.length shows how many pages have been visited before this one</li>
+                                <li>.go() can be used to go forward or back a page (0 reloads current page, positive/negative numbers go forward/back respectively)</li>
+                                <li>.forward() goes forward one page</li>
+                                <li>.back() goes back one page</li>
+                            </ul>
+                        </li>
+                        <li>window.open() - accepts three parameters: URL, window title, attributes list. Ex: const popup = window.open('https://sitepoint.com','SitePoint','width=400,height=44,resizable=yes');</li>
+                        <li>popup.close() (where popup is a reference to a window) closes a window</li>
+                        <li>window.moveTo() moves to coordinates given as x,y parameters</li>
+                        <li>window.resizeTo() resizes; specify height and width</li>
+                        <li><strong>Note: Most popup methods are strongly discouraged nowadays.</strong></li>
+                        <li>window.screen.height and .width find the user's screen size; availHeight and availWidth give the screen size minus OS menus. Screen object is more useful in Mobile, but most of these are replaced by better practices now (like media queries/feature detection)</li>
+                        <li>Document Object:
+                            <ul>
+                                <li>object within the window object</li>
+                                <li>used extensively for selection: see DOM</li>
+                                <li>document.write() replaces the current document with the string in parentheses -- if used inline, will only fill the space within script tags</li>
+                            </ul>
+                        </li>
+                        <li>Cookies: save a text file of name/value pairs with info from a user's previous session -- note EU Cookie Directive requires site to ask permission to use cookies.</li>
+                        <li>To save a cookie: document.cookie = 'name=value; name=value;' etc</li>
+                        <li>Adding more to a cookie will not overwrite the string; it will append new values at the end. Using the same name allows you to reassign values.</li>
+                        <li>Read contents of the "cookie jar" with document.cookie</li>
+                        <li>split() allows you to break the cookie into an array of name/value pairs, so you can use a loop to iterate through and use them</li>
+                        <li>Cookies are session cookies by default (disappear after browser is closed) but can be set to expire later with "; expires=date" to the end of a cookie. (date must be in UTC string format, ex. expireDate.toUTCString() DO NOT rely on this for sensitive info.</li>
+                        <li>Delete a cookie by setting the expiration date to in the past.</li>
+                        <li>Timing Functions:
+                            <ul>
+                                <li>setTimeout() -- lets you set an arrow function and a number of milliseconds to count down before running next code. Can be cancelled with clearTimeout()</li>
+                                <li>setInterval() repeatedly invokes callback function after a given number of millisecondsds</li>
+                            </ul>
+                        </li>
+                     </ul>
+                    <h4>Chapter 14: HTML5 APIs</h4>
+                    <ul>
+                        <li>HTML 5.1 is the latest incarnation of HTML, and includes several APIs that JS can access.</li>
+                        <li>data- attributes embed custom data into a webpage that can be used by JS for UX enhancement. These attributes:
+                            <ul>
+                                <li>must start with data-</li>
+                                <li>can only contain lowercase letters, numbers, hyphens, dots, colons, underscores</li>
+                                <li>include an optional string value</li>
+                                <li>can be accessed with "dataset" ex: access data-powers with superman.dataset.powers</li>
+                                <li>old browsers can get this with getAttribute, ex: superman.getAttribute('data-powers');</li>
+                                <li>allow you to add data directly into the HTML markup for a richer US</li>
+                                <li>should only be used when no other HTML elements apply (ex: data-class is stupid. Just use class attribute)</li>
+                            </ul>
+                        </li>
+                        <li>Web Storage API: allows key-value pairs to be stored on the user's device, like cookies but different:
+                            <ul>
+                                <li>Not shared with the server on every request</li>
+                                <li>Available in multiple browser windows if domain is the same</li>
+                                <li>storage capacity is much larger (usually up to 5GB per domain -- cookie limit is 4KB)</li>
+                                <li>Does not automatically expire like cookies (so cookies might be better for some things)</li>
+                                <li>This is where localStorage comes from! Also sessionStorage, which is similar but only for the current session.</li>
+                            </ul>
+                        </li>
+                        <li>localStorage/sessionStorage methods:
+                            <ul>
+                                <li>setItem('name','value') - stores the information</li>
+                                <li>localStorage.name = 'value' - stores the information (by assignment)</li>
+                                <li>getItem('name') - returns the value stored with that name</li>
+                                <li>removeItem('name') - removes the item</li>
+                                <li>delete localStorage.name - deletes the item</li>
+                                <li>localStorage.clear(); - completely removes everything in LS</li>
+                                <li>LS methods fire a storage event -- this has properties of its own: key, newValue, oldValue, and storageArea (the latter tells us where the changed item was saved)</li>
+                            </ul>
+                        </li>
+                        <li>LocalStorage only accepts strings; use JSON.stringify() to save objects as strings</li>
+                        <li>Geolocation API: lets you access the geographic coordinates of the user's device (with user's permission). If available, uses "navigator" object and methods:
+                            <ul>
+                                <li>navigator.geolocation.getCurrentPosition(callback); - passes a "position" object with coords as latitude and longitude. ex: position.coords.latitude, position.coords.longitude</li>
+                                <li>position.speed - ground speed of device in meters per second</li>
+                                <li>position.altitude - estimate of device's altitude in meters (above center of Earth)</li>
+                                <li>position.heading - direction the device is moving in</li>
+                                <li>position.timestamp - time that position info was recorded</li>
+                                <li>position.accuracy - returns accuracy of the coordinates in meters (lower = more accurate)</li>
+                                <li>navigator.geolocation.watchPosition(callback) calls the callback function every time the device's position updates (stop this happening with .clearWatch(id).</li>
+                            </ul>
+                        </li>
+                        <li>Web Worker API: performs computationally intensive tasks in the background (helps websites run more smoothly)</li>
+                        <li>Websockets: new protocol for internet communication; allows real-time, two way communication</li>
+                        <li>Notification API: allows you to display notifications on the user's system
+                            <ul>
+                                <li>Get permission first. if(window.Notification){ Notification.requestPermission();}</li>
+                                <li>.then((permission => if(Notification.permission === 'granted') { new Notification('string');</li>
+                                <li>Notification object includes body and icon you can specify as strings. Ex: const notification = new Notification('JavaScript:Novice to Ninja',{body: 'The new book from Sitepoint', icon: 'sitepointlogo.png'});</li>
+                                <li>Close a notification with notification,close();</li>
+                            </ul>
+                        </li>
+                        <li>audio and video elements: embeds audio and video in a webpage; Media API helps control these via JS</li>
+                        <li>canvas element: dynamically draws geometric shapes, text, and images in real time with JS</li>
+                        <li>shim/polyfill: a piece of code that adds support of missing features to older browsers.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Resources/Links</h3>
+                    <ul>
+                        <li><a href="https://github.com/js-cookie/js-cookie" target="_blank">jsCookie</a></li>
+                        <li><a href="https://github.com/ScottHamper/Cookies" target="_blank">Cookies.js</a></li>
+                        <li><a href="https://www.sitepoint.com/how-why-use-html5-custom-data-attributes/" target="_blank">How You Can Use HTML5 Custom Data Attributes and Why</a></li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer>
+                &copy; 2020 Kimberly Capangpangan. All rights reserved.
+            </footer>
+        
+            <script src="js/pagefunctions.js"></script>
+            <script src="js/week8.js"></script>
+        </div>
+    </body>
+</html>
