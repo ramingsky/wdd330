@@ -22,7 +22,7 @@ Enter the email address below to send the contents of the form to.  You can ente
 
 */
 
-$my_email = "me@RamilCapangpangan.com";
+$my_email = "mynetmaster2000@gmail.com";
 
 /*
 
@@ -40,7 +40,7 @@ If you do change it, remove the "/" symbol below and replace with the name of th
 
 */
 
-//CHANGED BY PAUL CHENEY
+//CHANGED BY 
 $continue=$_REQUEST['redirect'];
 if ($continue == null) 
 {
@@ -109,7 +109,7 @@ $message = $message . PHP_EOL.PHP_EOL."-- ".PHP_EOL."Thank you for using FormToE
 
 $message = stripslashes($message);
 
-//CHANGED BY PAUL CHENEY
+//CHANGED BY 
 $subject=$_REQUEST['subject'];
 if ($subject == null) 
 {
@@ -138,7 +138,7 @@ $headers = "From: {$from_name} <{$_REQUEST['email']}>";
 
 mail($my_email,$subject,$message,$headers);
 
-// ADDED BY PAUL CHENEY
+// ADDED BY 
 if ($continue != "/") {
 	header("Location: $continue");
 }

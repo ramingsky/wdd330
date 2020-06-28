@@ -8,6 +8,6 @@ function createElement(tag, text, className, src, alt) {
 	return genElement;
 }
 
-const imgBasePath = "https://byui-cit.github.io/cit261/examples/";
+const imgBasePath = "https://byui-cit.github.io/WDD 330/examples/";
 
 export { createElement, imgBasePath }

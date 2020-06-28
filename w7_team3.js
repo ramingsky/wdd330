@@ -131,7 +131,7 @@ function renderOneHike(hike) {
 
 
 //Move to module
-const imgBasePath = "https://byui-cit.github.io/cit261/examples/";
+const imgBasePath = "https://byui-cit.github.io/WDD 330/examples/";
 
 hikes.showHikeList();
 
