@@ -1,6 +1,6 @@
 {
   "sectionTitle" : "Our Services",
-  "founded" : 2005,
+  "founded" : 2000,
   "available" : "Onsite or Offsite",
   "services" : [
     {
@@ -13,7 +13,7 @@
       "name" : "Small Business & Residential",
       "svcImage" : "images/home_and_business.jpg",
       "subTitle" : "Fast & Affordable",
-      "description" : "We serve residential, home-based business and small business customers. If you need service that’s fast and affordable, call Net Masters."
+      "description" : "We serve residential, home-based business and small business customers. If you need service that’s fast and affordable, call Net Masterss."
     },
     {
       "name" : "Hard Drives",
@@ -31,7 +31,7 @@
       "name" : "PC & Mac",
       "svcImage" : "images/pc_and_mac.jpg",
       "subTitle" : "We Service Both",
-      "description" : "It doesn’t matter which technology you choose for your home or small business. From setting it up to service to training, Net Masters can help!"
+      "description" : "It doesn’t matter which technology you choose for your home or small business. From setting it up to service to training, Net Masterss can help!"
     },
     {
       "name" : "Maintenance Contracts",
@@ -49,7 +49,7 @@
       "name" : "Complex Environments",
       "svcImage" : "images/servers_and_databases.jpg",
       "subTitle" : "Servers, Database Systems & More",
-      "description" : "We can handle servers, database software and more. Supporting the technology needs of your business or high-end residence is top priority for Net Masters."
+      "description" : "We can handle servers, database software and more. Supporting the technology needs of your business or high-end residence is top priority for Net Masterss."
     },
     {
       "name" : "Remote Support",
