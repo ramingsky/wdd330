@@ -155,10 +155,10 @@
                         <form action="FormToEmail.php" method="post" enctype="multipart/form-data" name="attend" id="contactForm">
 
                             <h4>Personal Information</h4>
-                            <fieldset>
-                                <label for="name"><span>Full Name:</span><input name="name" type="text" placeholder="John Doe" pattern="[a-zA-Z -._]{4,99}" required autofocus title="Please provide your full name"></label>
+                            <fieldset>wecker
+                                <label for="name"><span>Full Name:</span><input name="name" type="text" placeholder="John Wecker" pattern="[a-zA-Z -._]{4,99}" required autofocus title="Please provide your full name"></label>
                                 <label><span>Full Address:</span><input name="address" type="text" placeholder="123 South Main St, Pleasantville, IN 44444" pattern="[a-zA-Z0-9., ]{3,99}" required title="Please provide your complete mailing address"></label>
-                                <label for="email"><span>Email:</span><input name="email" type="email" placeholder="johndoe@gmail.com" required title="Please provide a valid email address"></label>
+                                <label for="email"><span>Email:</span><input name="email" type="email" placeholder="johnwecker@gmail.com" required title="Please provide a valid email address"></label>
                                 <label for="phone"><span>Phone:</span><input name="phone" type="tel" placeholder="123-456-7890" pattern="[0-9-]{10,20}" required title="Please provide a valid phone number"></label>
                             </fieldset>
                             <br>
@@ -195,32 +195,22 @@
                         </form>
                     </section>
                 </div>
+
+                
+
+
+
+
                 <div class="col-50">
                     <!-- Display the company information and a map of our location. -->
                     <section class="column-container">
                         <p><i class="fa fa-phone fa-fw"></i> <b>Phone:</b> (088)850-2366</p>
                         <p><i class="fa fa-envelope fa-fw"></i> <b>Email:</b> mynetmaster2000@gmail.com</p>
                         <p><i class="fa fa-clock-o fa-fw"></i> <b>Hours:</b> Monday - Saturday, 8:00AM - 6:00PM</p>
-                        <p><i class="fa fa-map-marker fa-fw"></i> <b>Location:</b> Carmen, CDO City, Philippines</p>
+                        <p><i class="fa fa-map-marker fa-fw"></i> <b>Location:</b> Besides Sue & Jane Chocoffee and More, Carmen, CDO City, Philippines</p>
                         
                         <!-- Add Google Maps -->
-                        <div id="map"></div>
-                        <script>
-                            function initMap() {
-                                var uluru = {lat: 8.486079, lng: 124.635474};
-                                var map = new google.maps.Map(document.getElementById('map'), {
-                                    zoom: 14,
-                                    center: uluru
-                                });
-                                var marker = new google.maps.Marker({
-                                    position: uluru,
-                                    map: map
-                                });
-                            }
-                        </script>
-                        <script async defer
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3nERWsHsBME-Co15eyaCSUrsIVlfe8Rk&callback=initMap">
-                        </script>
+                        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=sue%20%26%20jane&t=&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://thevpndeal.com/nordvpn-coupon/">nordvpn coupon</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
                     </section>
                 </div>
             </div>
