@@ -7,7 +7,7 @@
       "name" : "Computer Services",
       "svcImage" : "images/computer-help.jpg",
       "subTitle" : "Get It Working Like New",
-      "description" : "Does it seem like your computer needs a major overhaul? Let us remove malicious software, optimize your computer, update all your existing software, install all Windows or Mac updates, and more."
+      "description" : "Does it seem like your computer needs a major overhaul? Let us remove malicious software, optimize your computer, update all your existing software, install all Windows or Mac updates, and let you know the latest and previous specs in the market before you decide to purchase."
     },
     {
       "name" : "Small Business & Residential",
@@ -28,10 +28,10 @@
       "description" : "Computer slow? Trouble connecting to the internet? Online email or account been hacked? Using “free” security software? You have malicious software! If you think you won’t get it, think again!"
     },
     {
-      "name" : "PC & Mac",
+      "name" : "Mobile Phones (Android or iOS), PC & Mac",
       "svcImage" : "images/pc_and_mac.jpg",
       "subTitle" : "We Service Both",
-      "description" : "It doesn’t matter which technology you choose for your home or small business. From setting it up to service to training, Net Masters can help!"
+      "description" : "It doesn’t matter which technology you choose for your home or small business, It maybe a mobile cellphone, laptop, mac or PC. From setting it up to service to training, Net Masters can help!"
     },
     {
       "name" : "Maintenance Contracts",
@@ -46,7 +46,7 @@
       "description" : "We can review your current technology and let you know if it meets your needs. We can also leave you with a detailed report that you can implement with us or on your own."
     },
     {
-      "name" : "Complex Environments",
+      "name" : "Complex Environments and Auxiliaries",
       "svcImage" : "images/servers_and_databases.jpg",
       "subTitle" : "Servers, Database Systems & More",
       "description" : "We can handle servers, database software and more. Supporting the technology needs of your business or high-end residence is top priority for Net Masters."
