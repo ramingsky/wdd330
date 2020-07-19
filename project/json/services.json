@@ -22,10 +22,10 @@
       "description" : "Hard drive crash? We can recover those lost vacation pictures or critical business documents. Running out of disk space? We also upgrade hard drives so you won’t run out of space as your life or business grows."
     },
     {
-      "name" : "Virus Removal",
+      "name" : "Internet Connection and Virus Removal",
       "svcImage" : "images/virus_removal.jpg",
       "subTitle" : "We Guarantee Our Service",
-      "description" : "Computer slow? Trouble connecting to the internet? Online email or account been hacked? Using “free” security software? You have malicious software! If you think you won’t get it, think again!"
+      "description" : "Intenet Slow or Computer slow? Trouble connecting to the internet? or No Internet at all? Online email or account been hacked? Using “free” security software? You have malicious software! Then we can be handy to support you even when you are in remote location"
     },
     {
       "name" : "Mobile Phones (Android or iOS), PC & Mac",
@@ -40,7 +40,7 @@
       "description" : "Tired of not knowing what your IT costs are? Our maintenance contracts include monthly service and discounted rates on additional or emergency services."
     },
     {
-      "name" : "Assessments & Diagnostics",
+      "name" : "Internet Access? Other Assessments & Diagnostics",
       "svcImage" : "images/computer-diagnostics.jpg",
       "subTitle" : "What You Have & What You Need",
       "description" : "We can review your current technology and let you know if it meets your needs. We can also leave you with a detailed report that you can implement with us or on your own."
