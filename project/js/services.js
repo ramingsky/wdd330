@@ -23,7 +23,7 @@
       myTitle.textContent = jsonObj['sectionTitle'];
       header.appendChild(myTitle);
       var mySubtitle = document.createElement('p');
-      mySubtitle.textContent = 'Available: ' + jsonObj['available'] + ' // Founded: ' + jsonObj['founded'];
+      mySubtitle.textContent = `Available: ${jsonObj['available']} // Founded: ${jsonObj['founded']}`;
       header.appendChild(mySubtitle);
     }
 
